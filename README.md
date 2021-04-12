@@ -4,6 +4,7 @@
 
 * https://aria2.github.io
 * https://aria2.github.io/manual/en/html/aria2c.html#methods
+* https://juancarlospaco.github.io/aria/index.html
 
 
 # Use
