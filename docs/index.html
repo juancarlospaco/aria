@@ -94,151 +94,172 @@ window.addEventListener('DOMContentLoaded', main);
   </div>
   <ul class="simple simple-toc" id="toc-list">
 <li>
-  <a class="reference reference-toplevel" href="#18" id="68">Templates</a>
+  <a class="reference reference-toplevel" href="#7" id="57">Types</a>
+  <ul class="simple simple-toc-section">
+      <li><a class="reference" href="#Aria"
+    title="Aria = object
+  ip*: string
+  port*: uint16">Aria</a></li>
+
+  </ul>
+</li>
+<li>
+  <a class="reference reference-toplevel" href="#12" id="62">Procs</a>
   <ul class="simple simple-toc-section">
       <ul class="simple nested-toc-section">getOption
-      <li><a class="reference" href="#getOption.t%2Cstring"
-    title="getOption(gid: string): string">getOption(gid: string): string</a></li>
+      <li><a class="reference" href="#getOption%2CAria%2Cstring"
+    title="getOption(self: Aria; gid: string): JsonNode">getOption(self: Aria; gid: string): JsonNode</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">forceShutdown
-      <li><a class="reference" href="#forceShutdown.t"
-    title="forceShutdown(): string">forceShutdown(): string</a></li>
+      <li><a class="reference" href="#forceShutdown%2CAria"
+    title="forceShutdown(self: Aria): JsonNode">forceShutdown(self: Aria): JsonNode</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">unpause
-      <li><a class="reference" href="#unpause.t%2Cstring"
-    title="unpause(gid: string): string">unpause(gid: string): string</a></li>
+      <li><a class="reference" href="#unpause%2CAria%2Cstring"
+    title="unpause(self: Aria; gid: string): JsonNode">unpause(self: Aria; gid: string): JsonNode</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">getSessionInfo
-      <li><a class="reference" href="#getSessionInfo.t"
-    title="getSessionInfo(): string">getSessionInfo(): string</a></li>
+      <li><a class="reference" href="#getSessionInfo%2CAria"
+    title="getSessionInfo(self: Aria): JsonNode">getSessionInfo(self: Aria): JsonNode</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">shutdown
-      <li><a class="reference" href="#shutdown.t"
-    title="shutdown(): string">shutdown(): string</a></li>
+      <li><a class="reference" href="#shutdown%2CAria"
+    title="shutdown(self: Aria): JsonNode">shutdown(self: Aria): JsonNode</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">newAria
+      <li><a class="reference" href="#newAria%2Cstring"
+    title="newAria(ip = &quot;127.0.0.1&quot;; port = 6800.uint16): Aria">newAria(ip = &quot;127.0.0.1&quot;; port = 6800.uint16): Aria</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">pause
-      <li><a class="reference" href="#pause.t%2Cstring"
-    title="pause(gid: string): string">pause(gid: string): string</a></li>
+      <li><a class="reference" href="#pause%2CAria%2Cstring"
+    title="pause(self: Aria; gid: string): JsonNode">pause(self: Aria; gid: string): JsonNode</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">getGlobalOption
-      <li><a class="reference" href="#getGlobalOption.t"
-    title="getGlobalOption(): string">getGlobalOption(): string</a></li>
+      <li><a class="reference" href="#getGlobalOption%2CAria"
+    title="getGlobalOption(self: Aria): JsonNode">getGlobalOption(self: Aria): JsonNode</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">saveSession
-      <li><a class="reference" href="#saveSession.t"
-    title="saveSession(): string">saveSession(): string</a></li>
+      <li><a class="reference" href="#saveSession%2CAria"
+    title="saveSession(self: Aria): JsonNode">saveSession(self: Aria): JsonNode</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">forceRemove
-      <li><a class="reference" href="#forceRemove.t%2Cstring"
-    title="forceRemove(gid: string): string">forceRemove(gid: string): string</a></li>
-
-  </ul>
-  <ul class="simple nested-toc-section">aria
-      <li><a class="reference" href="#aria.t%2Cuntyped"
-    title="aria(code: untyped): untyped">aria(code: untyped): untyped</a></li>
+      <li><a class="reference" href="#forceRemove%2CAria%2Cstring"
+    title="forceRemove(self: Aria; gid: string): JsonNode">forceRemove(self: Aria; gid: string): JsonNode</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">pauseAll
-      <li><a class="reference" href="#pauseAll.t"
-    title="pauseAll(): string">pauseAll(): string</a></li>
+      <li><a class="reference" href="#pauseAll%2CAria"
+    title="pauseAll(self: Aria): JsonNode">pauseAll(self: Aria): JsonNode</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">unpauseAll
-      <li><a class="reference" href="#unpauseAll.t"
-    title="unpauseAll(): string">unpauseAll(): string</a></li>
+      <li><a class="reference" href="#unpauseAll%2CAria"
+    title="unpauseAll(self: Aria): JsonNode">unpauseAll(self: Aria): JsonNode</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">forcePauseAll
-      <li><a class="reference" href="#forcePauseAll.t"
-    title="forcePauseAll(): string">forcePauseAll(): string</a></li>
+      <li><a class="reference" href="#forcePauseAll%2CAria"
+    title="forcePauseAll(self: Aria): JsonNode">forcePauseAll(self: Aria): JsonNode</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">remove
-      <li><a class="reference" href="#remove.t%2Cstring"
-    title="remove(gid: string): string">remove(gid: string): string</a></li>
+      <li><a class="reference" href="#remove%2CAria%2Cstring"
+    title="remove(self: Aria; gid: string): JsonNode">remove(self: Aria; gid: string): JsonNode</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">getVersion
-      <li><a class="reference" href="#getVersion.t"
-    title="getVersion(): string">getVersion(): string</a></li>
+      <li><a class="reference" href="#getVersion%2CAria"
+    title="getVersion(self: Aria): JsonNode">getVersion(self: Aria): JsonNode</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">getUris
-      <li><a class="reference" href="#getUris.t%2Cstring"
-    title="getUris(gid: string): string">getUris(gid: string): string</a></li>
+      <li><a class="reference" href="#getUris%2CAria%2Cstring"
+    title="getUris(self: Aria; gid: string): JsonNode">getUris(self: Aria; gid: string): JsonNode</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">getGlobalStat
-      <li><a class="reference" href="#getGlobalStat.t"
-    title="getGlobalStat(): string">getGlobalStat(): string</a></li>
+      <li><a class="reference" href="#getGlobalStat%2CAria"
+    title="getGlobalStat(self: Aria): JsonNode">getGlobalStat(self: Aria): JsonNode</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">purgeDownloadResult
-      <li><a class="reference" href="#purgeDownloadResult.t"
-    title="purgeDownloadResult(): string">purgeDownloadResult(): string</a></li>
+      <li><a class="reference" href="#purgeDownloadResult%2CAria"
+    title="purgeDownloadResult(self: Aria): JsonNode">purgeDownloadResult(self: Aria): JsonNode</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">tellActive
-      <li><a class="reference" href="#tellActive.t"
-    title="tellActive(): string">tellActive(): string</a></li>
+      <li><a class="reference" href="#tellActive%2CAria"
+    title="tellActive(self: Aria): JsonNode">tellActive(self: Aria): JsonNode</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">addMetalink
-      <li><a class="reference" href="#addMetalink.t%2Cstring"
-    title="addMetalink(metalink: string): string">addMetalink(metalink: string): string</a></li>
+      <li><a class="reference" href="#addMetalink%2CAria%2Cstring"
+    title="addMetalink(self: Aria; metalink: string): JsonNode">addMetalink(self: Aria; metalink: string): JsonNode</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">getFiles
-      <li><a class="reference" href="#getFiles.t%2Cstring"
-    title="getFiles(gid: string): string">getFiles(gid: string): string</a></li>
+      <li><a class="reference" href="#getFiles%2CAria%2Cstring"
+    title="getFiles(self: Aria; gid: string): JsonNode">getFiles(self: Aria; gid: string): JsonNode</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">getPeers
-      <li><a class="reference" href="#getPeers.t%2Cstring"
-    title="getPeers(gid: string): string">getPeers(gid: string): string</a></li>
+      <li><a class="reference" href="#getPeers%2CAria%2Cstring"
+    title="getPeers(self: Aria; gid: string): JsonNode">getPeers(self: Aria; gid: string): JsonNode</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">forcePause
-      <li><a class="reference" href="#forcePause.t%2Cstring"
-    title="forcePause(gid: string): string">forcePause(gid: string): string</a></li>
+      <li><a class="reference" href="#forcePause%2CAria%2Cstring"
+    title="forcePause(self: Aria; gid: string): JsonNode">forcePause(self: Aria; gid: string): JsonNode</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">listNotifications
-      <li><a class="reference" href="#listNotifications.t"
-    title="listNotifications(): string">listNotifications(): string</a></li>
+      <li><a class="reference" href="#listNotifications%2CAria"
+    title="listNotifications(self: Aria): JsonNode">listNotifications(self: Aria): JsonNode</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">addTorrent
-      <li><a class="reference" href="#addTorrent.t%2Cstring"
-    title="addTorrent(torrent: string): string">addTorrent(torrent: string): string</a></li>
+      <li><a class="reference" href="#addTorrent%2CAria%2Cstring"
+    title="addTorrent(self: Aria; torrent: string): JsonNode">addTorrent(self: Aria; torrent: string): JsonNode</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">tellStatus
-      <li><a class="reference" href="#tellStatus.t%2Cstring"
-    title="tellStatus(gid: string): string">tellStatus(gid: string): string</a></li>
+      <li><a class="reference" href="#tellStatus%2CAria%2Cstring"
+    title="tellStatus(self: Aria; gid: string): JsonNode">tellStatus(self: Aria; gid: string): JsonNode</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">getServers
-      <li><a class="reference" href="#getServers.t%2Cstring"
-    title="getServers(gid: string): string">getServers(gid: string): string</a></li>
+      <li><a class="reference" href="#getServers%2CAria%2Cstring"
+    title="getServers(self: Aria; gid: string): JsonNode">getServers(self: Aria; gid: string): JsonNode</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">removeDownloadResult
-      <li><a class="reference" href="#removeDownloadResult.t%2Cstring"
-    title="removeDownloadResult(gid: string): string">removeDownloadResult(gid: string): string</a></li>
+      <li><a class="reference" href="#removeDownloadResult%2CAria%2Cstring"
+    title="removeDownloadResult(self: Aria; gid: string): JsonNode">removeDownloadResult(self: Aria; gid: string): JsonNode</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">addUrl
-      <li><a class="reference" href="#addUrl.t%2Cstring"
-    title="addUrl(url: string): string">addUrl(url: string): string</a></li>
+      <li><a class="reference" href="#addUrl%2CAria%2Cstring"
+    title="addUrl(self: Aria; url: string): JsonNode">addUrl(self: Aria; url: string): JsonNode</a></li>
+
+  </ul>
+
+  </ul>
+</li>
+<li>
+  <a class="reference reference-toplevel" href="#18" id="68">Templates</a>
+  <ul class="simple simple-toc-section">
+      <ul class="simple nested-toc-section">aria
+      <li><a class="reference" href="#aria.t%2Cuntyped"
+    title="aria(code: untyped): untyped">aria(code: untyped): untyped</a></li>
 
   </ul>
 
@@ -258,227 +279,337 @@ window.addEventListener('DOMContentLoaded', main);
 
 <p><strong class="examples_text">Example:</strong></p>
 <pre class="listing"><span class="Keyword">import</span><span class="Whitespace"> </span><span class="Identifier">src</span><span class="Operator">/</span><span class="Identifier">aria</span><span class="Whitespace">
-</span><span class="Keyword">import</span><span class="Whitespace"> </span><span class="Identifier">std</span><span class="Operator">/</span><span class="Identifier">httpclient</span><span class="Whitespace">
+</span><span class="Keyword">import</span><span class="Whitespace"> </span><span class="Identifier">std</span><span class="Operator">/</span><span class="Punctuation">[</span><span class="Identifier">json</span><span class="Punctuation">,</span><span class="Whitespace"> </span><span class="Identifier">osproc</span><span class="Punctuation">]</span><span class="Whitespace">  </span><span class="Comment">## json.$, startProcess</span><span class="Whitespace">
 </span><span class="Comment">## &quot;aria&quot; template activates an Aria process daemon.</span><span class="Whitespace">
 </span><span class="Comment">## &quot;aria&quot; template does NOT work in JavaScript, because browser cant run processes,</span><span class="Whitespace">
 </span><span class="Comment">## but you can use the Aria API from the browser on a running Aria process daemon.</span><span class="Whitespace">
-</span><span class="Comment">##</span><span class="Whitespace">
-</span><span class="Comment">## IP is 127.0.0.1 because is not safe to expose RPC to Internet.</span><span class="Whitespace">
-</span><span class="Comment">## Port is 6800 because is Default, you only need 1 Aria process.</span><span class="Whitespace">
+</span><span class="Keyword">let</span><span class="Whitespace"> </span><span class="Identifier">client</span><span class="Punctuation">:</span><span class="Whitespace"> </span><span class="Identifier">Aria</span><span class="Whitespace"> </span><span class="Operator">=</span><span class="Whitespace"> </span><span class="Identifier">newAria</span><span class="Punctuation">(</span><span class="Identifier">ip</span><span class="Whitespace"> </span><span class="Operator">=</span><span class="Whitespace"> </span><span class="StringLit">&quot;127.0.0.1&quot;</span><span class="Punctuation">,</span><span class="Whitespace"> </span><span class="Identifier">port</span><span class="Whitespace"> </span><span class="Operator">=</span><span class="Whitespace"> </span><span class="FloatNumber">6800.</span><span class="Identifier">uint16</span><span class="Punctuation">)</span><span class="Whitespace">
 </span><span class="Identifier">aria</span><span class="Punctuation">:</span><span class="Whitespace">
-  </span><span class="Comment">## You need any HTTP Client, you can use std/fetch for JavaScript.</span><span class="Whitespace">
-  </span><span class="Keyword">let</span><span class="Whitespace"> </span><span class="Identifier">client</span><span class="Whitespace"> </span><span class="Operator">=</span><span class="Whitespace"> </span><span class="Identifier">newHttpClient</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Whitespace">
   </span><span class="Comment">## These are just Aria API calls, same naming as from Aria Documentation.</span><span class="Whitespace">
-  </span><span class="Identifier">echo</span><span class="Whitespace"> </span><span class="Identifier">client</span><span class="Operator">.</span><span class="Identifier">getContent</span><span class="Punctuation">(</span><span class="Identifier">getVersion</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Whitespace">
-  </span><span class="Comment">## Just 1 simple HTTP GET, no Headers, no Body, no Form-data.</span><span class="Whitespace">
-  </span><span class="Identifier">echo</span><span class="Whitespace"> </span><span class="Identifier">client</span><span class="Operator">.</span><span class="Identifier">getContent</span><span class="Punctuation">(</span><span class="Identifier">listNotifications</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Whitespace">
-  </span><span class="Comment">## The lib only uses std/base64.encode() so is very future-proof.</span><span class="Whitespace">
-  </span><span class="Identifier">echo</span><span class="Whitespace"> </span><span class="Identifier">client</span><span class="Operator">.</span><span class="Identifier">getContent</span><span class="Punctuation">(</span><span class="Identifier">getSessionInfo</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Whitespace">
-  </span><span class="Comment">## The lib is only a few simple template, works everywhere with good performance.</span><span class="Whitespace">
-  </span><span class="Identifier">echo</span><span class="Whitespace"> </span><span class="Identifier">client</span><span class="Operator">.</span><span class="Identifier">getContent</span><span class="Punctuation">(</span><span class="Identifier">getGlobalStat</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Whitespace">
-  </span><span class="Identifier">echo</span><span class="Whitespace"> </span><span class="Identifier">client</span><span class="Operator">.</span><span class="Identifier">getContent</span><span class="Punctuation">(</span><span class="Identifier">getGlobalOption</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Whitespace">
-  </span><span class="Identifier">echo</span><span class="Whitespace"> </span><span class="Identifier">client</span><span class="Operator">.</span><span class="Identifier">getContent</span><span class="Punctuation">(</span><span class="Identifier">tellActive</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Whitespace">
-  </span><span class="Comment">## echo client.getContent(addUrl(&quot;http://nim-lang.org&quot;))</span><span class="Whitespace">
-  </span><span class="Comment">## See also addTorrent() and addMetalink()</span></pre></p>
-  <div class="section" id="18">
+  </span><span class="Identifier">echo</span><span class="Whitespace"> </span><span class="Identifier">client</span><span class="Operator">.</span><span class="Identifier">getVersion</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Whitespace">
+  </span><span class="Identifier">echo</span><span class="Whitespace"> </span><span class="Identifier">client</span><span class="Operator">.</span><span class="Identifier">listNotifications</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Whitespace">
+  </span><span class="Identifier">echo</span><span class="Whitespace"> </span><span class="Identifier">client</span><span class="Operator">.</span><span class="Identifier">getSessionInfo</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Whitespace">
+  </span><span class="Identifier">echo</span><span class="Whitespace"> </span><span class="Identifier">client</span><span class="Operator">.</span><span class="Identifier">getGlobalStat</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Whitespace">
+  </span><span class="Identifier">echo</span><span class="Whitespace"> </span><span class="Identifier">client</span><span class="Operator">.</span><span class="Identifier">getGlobalOption</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Whitespace">
+  </span><span class="Identifier">echo</span><span class="Whitespace"> </span><span class="Identifier">client</span><span class="Operator">.</span><span class="Identifier">tellActive</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Whitespace">
+  </span><span class="Comment">## echo client.addUrl(&quot;http://nim-lang.org&quot;)</span><span class="Whitespace">
+  </span><span class="Comment">## See also addTorrent() and addMetalink()</span></pre>
+<p><strong class="examples_text">Example: cmd: -r:off -b:js -d:nimExperimentalJsfetch -d:nimExperimentalAsyncjsThen</strong></p>
+<pre class="listing"><span class="Keyword">import</span><span class="Whitespace"> </span><span class="Identifier">src</span><span class="Operator">/</span><span class="Identifier">aria</span><span class="Whitespace">
+</span><span class="Keyword">import</span><span class="Whitespace"> </span><span class="Identifier">std</span><span class="Operator">/</span><span class="Identifier">jsfetch</span><span class="Whitespace">  </span><span class="Comment">## fetch()</span><span class="Whitespace">
+</span><span class="Keyword">let</span><span class="Whitespace"> </span><span class="Identifier">client</span><span class="Punctuation">:</span><span class="Whitespace"> </span><span class="Identifier">Aria</span><span class="Whitespace"> </span><span class="Operator">=</span><span class="Whitespace"> </span><span class="Identifier">newAria</span><span class="Punctuation">(</span><span class="Identifier">ip</span><span class="Whitespace"> </span><span class="Operator">=</span><span class="Whitespace"> </span><span class="StringLit">&quot;127.0.0.1&quot;</span><span class="Punctuation">,</span><span class="Whitespace"> </span><span class="Identifier">port</span><span class="Whitespace"> </span><span class="Operator">=</span><span class="Whitespace"> </span><span class="FloatNumber">6800.</span><span class="Identifier">uint16</span><span class="Punctuation">)</span><span class="Whitespace">
+</span><span class="Identifier">echo</span><span class="Whitespace"> </span><span class="Identifier">client</span><span class="Operator">.</span><span class="Identifier">getVersion</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Operator">.</span><span class="Identifier">repr</span></pre></p>
+  <div class="section" id="7">
+<h1><a class="toc-backref" href="#7">Types</a></h1>
+<dl class="item">
+<a id="Aria"></a>
+<dt><pre><a href="aria.html#Aria"><span class="Identifier">Aria</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
+  <span class="Identifier">ip</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
+  <span class="Identifier">port</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">uint16</span>
+</pre></dt>
+<dd>
+
+
+
+</dd>
+
+</dl></div>
+<div class="section" id="12">
+<h1><a class="toc-backref" href="#12">Procs</a></h1>
+<dl class="item">
+<a id="newAria,string"></a>
+<dt><pre><span class="Keyword">func</span> <a href="#newAria%2Cstring"><span class="Identifier">newAria</span></a><span class="Other">(</span><span class="Identifier">ip</span> <span class="Other">=</span> <span class="StringLit">&quot;127.0.0.1&quot;</span><span class="Other">;</span> <span class="Identifier">port</span> <span class="Other">=</span> <span class="DecNumber">6800</span><span class="Other">.</span><span class="Identifier">uint16</span><span class="Other">)</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="getVersion,Aria"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#getVersion%2CAria"><span class="Identifier">getVersion</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
+    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">LibraryError</span><span class="Other">,</span>
+    <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span>
+    <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="tellActive,Aria"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#tellActive%2CAria"><span class="Identifier">tellActive</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
+    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">LibraryError</span><span class="Other">,</span>
+    <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span>
+    <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="listNotifications,Aria"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#listNotifications%2CAria"><span class="Identifier">listNotifications</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
+    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">LibraryError</span><span class="Other">,</span>
+    <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="pauseAll,Aria"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#pauseAll%2CAria"><span class="Identifier">pauseAll</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
+    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">LibraryError</span><span class="Other">,</span>
+    <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span>
+    <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="forcePauseAll,Aria"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#forcePauseAll%2CAria"><span class="Identifier">forcePauseAll</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
+    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">LibraryError</span><span class="Other">,</span>
+    <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="unpauseAll,Aria"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#unpauseAll%2CAria"><span class="Identifier">unpauseAll</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
+    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">LibraryError</span><span class="Other">,</span>
+    <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span>
+    <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="getGlobalOption,Aria"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#getGlobalOption%2CAria"><span class="Identifier">getGlobalOption</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
+    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">LibraryError</span><span class="Other">,</span>
+    <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="getGlobalStat,Aria"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#getGlobalStat%2CAria"><span class="Identifier">getGlobalStat</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
+    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">LibraryError</span><span class="Other">,</span>
+    <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="purgeDownloadResult,Aria"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#purgeDownloadResult%2CAria"><span class="Identifier">purgeDownloadResult</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
+    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">LibraryError</span><span class="Other">,</span>
+    <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="getSessionInfo,Aria"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#getSessionInfo%2CAria"><span class="Identifier">getSessionInfo</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
+    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">LibraryError</span><span class="Other">,</span>
+    <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="shutdown,Aria"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#shutdown%2CAria"><span class="Identifier">shutdown</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
+    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">LibraryError</span><span class="Other">,</span>
+    <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span>
+    <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="forceShutdown,Aria"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#forceShutdown%2CAria"><span class="Identifier">forceShutdown</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
+    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">LibraryError</span><span class="Other">,</span>
+    <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="saveSession,Aria"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#saveSession%2CAria"><span class="Identifier">saveSession</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
+    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">LibraryError</span><span class="Other">,</span>
+    <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="remove,Aria,string"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#remove%2CAria%2Cstring"><span class="Identifier">remove</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">;</span> <span class="Identifier">gid</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
+    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">LibraryError</span><span class="Other">,</span>
+    <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="forceRemove,Aria,string"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#forceRemove%2CAria%2Cstring"><span class="Identifier">forceRemove</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">;</span> <span class="Identifier">gid</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
+    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">LibraryError</span><span class="Other">,</span>
+    <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="pause,Aria,string"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#pause%2CAria%2Cstring"><span class="Identifier">pause</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">;</span> <span class="Identifier">gid</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
+    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">LibraryError</span><span class="Other">,</span>
+    <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="forcePause,Aria,string"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#forcePause%2CAria%2Cstring"><span class="Identifier">forcePause</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">;</span> <span class="Identifier">gid</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
+    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">LibraryError</span><span class="Other">,</span>
+    <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="unpause,Aria,string"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#unpause%2CAria%2Cstring"><span class="Identifier">unpause</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">;</span> <span class="Identifier">gid</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
+    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">LibraryError</span><span class="Other">,</span>
+    <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="tellStatus,Aria,string"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#tellStatus%2CAria%2Cstring"><span class="Identifier">tellStatus</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">;</span> <span class="Identifier">gid</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
+    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">LibraryError</span><span class="Other">,</span>
+    <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="getUris,Aria,string"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#getUris%2CAria%2Cstring"><span class="Identifier">getUris</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">;</span> <span class="Identifier">gid</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
+    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">LibraryError</span><span class="Other">,</span>
+    <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="getFiles,Aria,string"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#getFiles%2CAria%2Cstring"><span class="Identifier">getFiles</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">;</span> <span class="Identifier">gid</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
+    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">LibraryError</span><span class="Other">,</span>
+    <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="getPeers,Aria,string"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#getPeers%2CAria%2Cstring"><span class="Identifier">getPeers</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">;</span> <span class="Identifier">gid</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
+    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">LibraryError</span><span class="Other">,</span>
+    <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="getServers,Aria,string"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#getServers%2CAria%2Cstring"><span class="Identifier">getServers</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">;</span> <span class="Identifier">gid</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
+    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">LibraryError</span><span class="Other">,</span>
+    <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="getOption,Aria,string"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#getOption%2CAria%2Cstring"><span class="Identifier">getOption</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">;</span> <span class="Identifier">gid</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
+    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">LibraryError</span><span class="Other">,</span>
+    <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="removeDownloadResult,Aria,string"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#removeDownloadResult%2CAria%2Cstring"><span class="Identifier">removeDownloadResult</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">;</span> <span class="Identifier">gid</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span>
+    <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span>
+    <span class="Identifier">LibraryError</span><span class="Other">,</span> <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="addUrl,Aria,string"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#addUrl%2CAria%2Cstring"><span class="Identifier">addUrl</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">;</span> <span class="Identifier">url</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
+    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">LibraryError</span><span class="Other">,</span>
+    <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="addTorrent,Aria,string"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#addTorrent%2CAria%2Cstring"><span class="Identifier">addTorrent</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">;</span> <span class="Identifier">torrent</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span>
+    <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span>
+    <span class="Identifier">LibraryError</span><span class="Other">,</span> <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="addMetalink,Aria,string"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#addMetalink%2CAria%2Cstring"><span class="Identifier">addMetalink</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="aria.html#Aria"><span class="Identifier">Aria</span></a><span class="Other">;</span> <span class="Identifier">metalink</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span>
+    <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span>
+    <span class="Identifier">LibraryError</span><span class="Other">,</span> <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+
+</dl></div>
+<div class="section" id="18">
 <h1><a class="toc-backref" href="#18">Templates</a></h1>
 <dl class="item">
-<a id="getVersion.t"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#getVersion.t"><span class="Identifier">getVersion</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="tellActive.t"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#tellActive.t"><span class="Identifier">tellActive</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="listNotifications.t"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#listNotifications.t"><span class="Identifier">listNotifications</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="pauseAll.t"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#pauseAll.t"><span class="Identifier">pauseAll</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="forcePauseAll.t"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#forcePauseAll.t"><span class="Identifier">forcePauseAll</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="unpauseAll.t"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#unpauseAll.t"><span class="Identifier">unpauseAll</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="getGlobalOption.t"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#getGlobalOption.t"><span class="Identifier">getGlobalOption</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="getGlobalStat.t"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#getGlobalStat.t"><span class="Identifier">getGlobalStat</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="purgeDownloadResult.t"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#purgeDownloadResult.t"><span class="Identifier">purgeDownloadResult</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="getSessionInfo.t"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#getSessionInfo.t"><span class="Identifier">getSessionInfo</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="shutdown.t"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#shutdown.t"><span class="Identifier">shutdown</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="forceShutdown.t"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#forceShutdown.t"><span class="Identifier">forceShutdown</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="saveSession.t"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#saveSession.t"><span class="Identifier">saveSession</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="remove.t,string"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#remove.t%2Cstring"><span class="Identifier">remove</span></a><span class="Other">(</span><span class="Identifier">gid</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="forceRemove.t,string"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#forceRemove.t%2Cstring"><span class="Identifier">forceRemove</span></a><span class="Other">(</span><span class="Identifier">gid</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="pause.t,string"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#pause.t%2Cstring"><span class="Identifier">pause</span></a><span class="Other">(</span><span class="Identifier">gid</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="forcePause.t,string"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#forcePause.t%2Cstring"><span class="Identifier">forcePause</span></a><span class="Other">(</span><span class="Identifier">gid</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="unpause.t,string"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#unpause.t%2Cstring"><span class="Identifier">unpause</span></a><span class="Other">(</span><span class="Identifier">gid</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="tellStatus.t,string"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#tellStatus.t%2Cstring"><span class="Identifier">tellStatus</span></a><span class="Other">(</span><span class="Identifier">gid</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="getUris.t,string"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#getUris.t%2Cstring"><span class="Identifier">getUris</span></a><span class="Other">(</span><span class="Identifier">gid</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="getFiles.t,string"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#getFiles.t%2Cstring"><span class="Identifier">getFiles</span></a><span class="Other">(</span><span class="Identifier">gid</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="getPeers.t,string"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#getPeers.t%2Cstring"><span class="Identifier">getPeers</span></a><span class="Other">(</span><span class="Identifier">gid</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="getServers.t,string"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#getServers.t%2Cstring"><span class="Identifier">getServers</span></a><span class="Other">(</span><span class="Identifier">gid</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="getOption.t,string"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#getOption.t%2Cstring"><span class="Identifier">getOption</span></a><span class="Other">(</span><span class="Identifier">gid</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="removeDownloadResult.t,string"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#removeDownloadResult.t%2Cstring"><span class="Identifier">removeDownloadResult</span></a><span class="Other">(</span><span class="Identifier">gid</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="addUrl.t,string"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#addUrl.t%2Cstring"><span class="Identifier">addUrl</span></a><span class="Other">(</span><span class="Identifier">url</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="addTorrent.t,string"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#addTorrent.t%2Cstring"><span class="Identifier">addTorrent</span></a><span class="Other">(</span><span class="Identifier">torrent</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="addMetalink.t,string"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#addMetalink.t%2Cstring"><span class="Identifier">addMetalink</span></a><span class="Other">(</span><span class="Identifier">metalink</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-
-</dd>
 <a id="aria.t,untyped"></a>
 <dt><pre><span class="Keyword">template</span> <a href="#aria.t%2Cuntyped"><span class="Identifier">aria</span></a><span class="Other">(</span><span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
 <dd>
@@ -496,7 +627,7 @@ window.addEventListener('DOMContentLoaded', main);
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2021-04-12 16:35:53 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2021-04-12 22:50:28 UTC</small>
       </div>
     </div>
   </div>
