@@ -10,12 +10,21 @@
 
 ```nim
 import aria
-import std/httpclient
+import std/json  # $
 
+let client: Aria = newAria(ip = "127.0.0.1", port = 6800.uint16)
 aria:
-  ## You need any HTTP Client, you can use std/fetch for JavaScript.
-  let client = newHttpClient()
   ## These are just Aria API calls, same naming as from Aria Documentation.
-  echo client.getContent(getVersion())
+  echo client.getVersion()
   ## See also addTorrent(), addMetalink(), addUrl(), etc
+```
+
+Aria in the Browser, JavaScript target:
+
+```nim
+import aria
+import std/[jsffi, jsfetch]  ## fetch()
+
+let client: Aria = newAria(ip = "127.0.0.1", port = 6800.uint16)
+echo client.getVersion().repr
 ```
