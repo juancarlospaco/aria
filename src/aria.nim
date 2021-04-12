@@ -3,90 +3,201 @@
 ## * https://aria2.github.io/manual/en/html/aria2c.html#methods
 from std/base64 import encode
 
-template getVersion*(): string = "http://127.0.0.1:6800/jsonrpc?id=nim&method=aria2.getVersion"
+type Aria* = object
+  ip*: string
+  port*: uint16
 
-template tellActive*(): string = "http://127.0.0.1:6800/jsonrpc?id=nim&method=aria2.tellActive"
+func newAria*(ip = "127.0.0.1"; port = 6800.uint16): Aria =
+  if not ip.len > 1: raise newException(ValueError, "IP argument must not be empty string")
+  if not(port > 1024.uint16 and port < 65535.uint16): raise newException(ValueError, "Port argument must be uint16, >1024 and <65535")
+  result.ip = ip
+  result.port = port
 
-template listNotifications*(): string = "http://127.0.0.1:6800/jsonrpc?id=nim&method=system.listNotifications"
+when defined(js):
+  import std/[jsfetch, asyncjs, jsffi]
 
-template pauseAll*(): string = "http://127.0.0.1:6800/jsonrpc?id=nim&method=aria2.pauseAll"
+  proc getVersion*(self: Aria): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.getVersion")))
 
-template forcePauseAll*(): string = "http://127.0.0.1:6800/jsonrpc?id=nim&method=aria2.forcePauseAll"
+  proc tellActive*(self: Aria): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.tellActive")))
 
-template unpauseAll*(): string = "http://127.0.0.1:6800/jsonrpc?id=nim&method=aria2.unpauseAll"
+  proc listNotifications*(self: Aria): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=system.listNotifications")))
 
-template getGlobalOption*(): string = "http://127.0.0.1:6800/jsonrpc?id=nim&method=aria2.getGlobalOption"
+  proc pauseAll*(self: Aria): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.pauseAll")))
 
-template getGlobalStat*(): string = "http://127.0.0.1:6800/jsonrpc?id=nim&method=aria2.getGlobalStat"
+  proc forcePauseAll*(self: Aria): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.forcePauseAll")))
 
-template purgeDownloadResult*(): string = "http://127.0.0.1:6800/jsonrpc?id=nim&method=aria2.purgeDownloadResult"
+  proc unpauseAll*(self: Aria): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.unpauseAll")))
 
-template getSessionInfo*(): string = "http://127.0.0.1:6800/jsonrpc?id=nim&method=aria2.getSessionInfo"
+  proc getGlobalOption*(self: Aria): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.getGlobalOption")))
 
-template shutdown*(): string = "http://127.0.0.1:6800/jsonrpc?id=nim&method=aria2.shutdown"
+  proc getGlobalStat*(self: Aria): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.getGlobalStat")))
 
-template forceShutdown*(): string = "http://127.0.0.1:6800/jsonrpc?id=nim&method=aria2.forceShutdown"
+  proc purgeDownloadResult*(self: Aria): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.purgeDownloadResult")))
 
-template saveSession*(): string = "http://127.0.0.1:6800/jsonrpc?id=nim&method=aria2.saveSession"
+  proc getSessionInfo*(self: Aria): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.getSessionInfo")))
 
-template urlify(endpoint: static[string]; gid: string): string =
-  when not defined(danger):
-    if not gid.len > 0:
-      raise newException(ValueError, "GID argument must not be empty string")
-  "http://127.0.0.1:6800/jsonrpc?id=nim&method=aria2." & endpoint & "&params=" & encode($([[gid]]))
+  proc shutdown*(self: Aria): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.shutdown")))
 
-template remove*(gid: string): string = urlify("remove", gid)
+  proc forceShutdown*(self: Aria): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.forceShutdown")))
 
-template forceRemove*(gid: string): string = urlify("forceRemove", gid)
+  proc saveSession*(self: Aria): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.saveSession")))
 
-template pause*(gid: string): string = urlify("pause", gid)
+  proc remove*(self: Aria; gid: string): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.remove&params=" & encode($([[gid]])))))
 
-template forcePause*(gid: string): string = urlify("forcePause", gid)
+  proc forceRemove*(self: Aria; gid: string): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.forceRemove&params=" & encode($([[gid]])))))
 
-template unpause*(gid: string): string = urlify("unpause", gid)
+  proc pause*(self: Aria; gid: string): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.pause&params=" & encode($([[gid]])))))
 
-template tellStatus*(gid: string): string = urlify("tellStatus", gid)
+  proc forcePause*(self: Aria; gid: string): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.forcePause&params=" & encode($([[gid]])))))
 
-template getUris*(gid: string): string = urlify("getUris", gid)
+  proc unpause*(self: Aria; gid: string): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.unpause&params=" & encode($([[gid]])))))
 
-template getFiles*(gid: string): string = urlify("getFiles", gid)
+  proc tellStatus*(self: Aria; gid: string): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.tellStatus&params=" & encode($([[gid]])))))
 
-template getPeers*(gid: string): string = urlify("getPeers", gid)
+  proc getUris*(self: Aria; gid: string): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.getUris&params=" & encode($([[gid]])))))
 
-template getServers*(gid: string): string = urlify("getServers", gid)
+  proc getFiles*(self: Aria; gid: string): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.getFiles&params=" & encode($([[gid]])))))
 
-template getOption*(gid: string): string = urlify("getOption", gid)
+  proc getPeers*(self: Aria; gid: string): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.getPeers&params=" & encode($([[gid]])))))
 
-template removeDownloadResult*(gid: string): string = urlify("removeDownloadResult", gid)
+  proc getServers*(self: Aria; gid: string): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.getServers&params=" & encode($([[gid]])))))
 
-template addUrl*(url: string): string =
-  when not defined(danger):
-    if not url.len > 0:
-      raise newException(ValueError, "url argument must not be empty string")
-  "http://127.0.0.1:6800/jsonrpc?id=nim&method=aria2.addUri&params=" & encode($([[url]]))
+  proc getOption*(self: Aria; gid: string): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.getOption&params=" & encode($([[gid]])))))
 
-template addTorrent*(torrent: string): string =
-  when not defined(danger):
-    if not torrent.len > 0:
-      raise newException(ValueError, "torrent argument must not be empty string")
-  "http://127.0.0.1:6800/jsonrpc?id=nim&method=aria2.addTorrent&params=" & encode($([[torrent]]))
+  proc removeDownloadResult*(self: Aria; gid: string): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.removeDownloadResult&params=" & encode($([[gid]])))))
 
-template addMetalink*(metalink: string): string =
-  when not defined(danger):
-    if not metalink.len > 0:
-      raise newException(ValueError, "metalink argument must not be empty string")
-  "http://127.0.0.1:6800/jsonrpc?id=nim&method=aria2.addMetalink&params=" & encode($([[metalink]]))
+  proc addUrl*(self: Aria; url: string): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.addUri&params=" & encode($([[url]])))))
 
-when not defined(js):
-  import std/osproc
-  from std/os import sleep
-  export Process, terminate, close
+  proc addTorrent*(self: Aria; torrent: string): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.addTorrent&params=" & encode($([[torrent]])))))
+
+  proc addMetalink*(self: Aria; metalink: string): Future[JsObject] {.async.} =
+    json(await fetch(cstring("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.addMetalink&params=" & encode($([[metalink]])))))
+else:
+  import std/[osproc, httpclient, json, os]
+
+  template clientify(url: string): JsonNode =
+    let
+      client = newHttpClient()
+      results = parseJson(client.getContent(url))
+    client.close()
+    results
+
+  proc getVersion*(self: Aria): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.getVersion")
+
+  proc tellActive*(self: Aria): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.tellActive")
+
+  proc listNotifications*(self: Aria): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=system.listNotifications")
+
+  proc pauseAll*(self: Aria): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.pauseAll")
+
+  proc forcePauseAll*(self: Aria): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.forcePauseAll")
+
+  proc unpauseAll*(self: Aria): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.unpauseAll")
+
+  proc getGlobalOption*(self: Aria): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.getGlobalOption")
+
+  proc getGlobalStat*(self: Aria): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.getGlobalStat")
+
+  proc purgeDownloadResult*(self: Aria): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.purgeDownloadResult")
+
+  proc getSessionInfo*(self: Aria): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.getSessionInfo")
+
+  proc shutdown*(self: Aria): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.shutdown")
+
+  proc forceShutdown*(self: Aria): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.forceShutdown")
+
+  proc saveSession*(self: Aria): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.saveSession")
+
+  proc remove*(self: Aria; gid: string): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.remove&params=" & encode($([[gid]])))
+
+  proc forceRemove*(self: Aria; gid: string): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.forceRemove&params=" & encode($([[gid]])))
+
+  proc pause*(self: Aria; gid: string): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.pause&params=" & encode($([[gid]])))
+
+  proc forcePause*(self: Aria; gid: string): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.forcePause&params=" & encode($([[gid]])))
+
+  proc unpause*(self: Aria; gid: string): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.unpause&params=" & encode($([[gid]])))
+
+  proc tellStatus*(self: Aria; gid: string): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.tellStatus&params=" & encode($([[gid]])))
+
+  proc getUris*(self: Aria; gid: string): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.getUris&params=" & encode($([[gid]])))
+
+  proc getFiles*(self: Aria; gid: string): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.getFiles&params=" & encode($([[gid]])))
+
+  proc getPeers*(self: Aria; gid: string): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.getPeers&params=" & encode($([[gid]])))
+
+  proc getServers*(self: Aria; gid: string): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.getServers&params=" & encode($([[gid]])))
+
+  proc getOption*(self: Aria; gid: string): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.getOption&params=" & encode($([[gid]])))
+
+  proc removeDownloadResult*(self: Aria; gid: string): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.removeDownloadResult&params=" & encode($([[gid]])))
+
+  proc addUrl*(self: Aria; url: string): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.addUri&params=" & encode($([[url]])))
+
+  proc addTorrent*(self: Aria; torrent: string): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.addTorrent&params=" & encode($([[torrent]])))
+
+  proc addMetalink*(self: Aria; metalink: string): JsonNode =
+    clientify("http://" & self.ip & ':' & $self.port & "/jsonrpc?id=nim&method=aria2.addMetalink&params=" & encode($([[metalink]])))
 
   template aria*(code: untyped): untyped =
     var proces: Process
     try:
       proces = startProcess("aria2c --no-conf=true --enable-color=false --daemon=true --enable-rpc=true --rpc-allow-origin-all=true --rpc-listen-all=false --interface='127.0.0.1' --check-certificate=false --rpc-secure=false", options = {poStdErrToStdOut, poEvalCommand, poDaemon})
-      sleep 2_000  # Maybe the sleeps can be removed?, I havent tested much.
+      sleep 2_000  # Maybe the sleeps can be removed?.
       code
     finally:
       proces.terminate()
@@ -95,25 +206,23 @@ when not defined(js):
 
 
 runnableExamples:
-  import std/httpclient
+  import std/[json, osproc]  ## json.$, startProcess
   ## "aria" template activates an Aria process daemon.
   ## "aria" template does NOT work in JavaScript, because browser cant run processes,
   ## but you can use the Aria API from the browser on a running Aria process daemon.
-  ##
-  ## IP is 127.0.0.1 because is not safe to expose RPC to Internet.
-  ## Port is 6800 because is Default, you only need 1 Aria process.
+  let client: Aria = newAria(ip = "127.0.0.1", port = 6800.uint16)
   aria:
-    ## You need any HTTP Client, you can use std/fetch for JavaScript.
-    let client = newHttpClient()
     ## These are just Aria API calls, same naming as from Aria Documentation.
-    echo client.getContent(getVersion())
-    ## Just 1 simple HTTP GET, no Headers, no Body, no Form-data.
-    echo client.getContent(listNotifications())
-    ## The lib only uses std/base64.encode() so is very future-proof.
-    echo client.getContent(getSessionInfo())
-    ## The lib is only a few simple template, works everywhere with good performance.
-    echo client.getContent(getGlobalStat())
-    echo client.getContent(getGlobalOption())
-    echo client.getContent(tellActive())
-    ## echo client.getContent(addUrl("http://nim-lang.org"))
+    echo client.getVersion()
+    echo client.listNotifications()
+    echo client.getSessionInfo()
+    echo client.getGlobalStat()
+    echo client.getGlobalOption()
+    echo client.tellActive()
+    ## echo client.addUrl("http://nim-lang.org")
     ## See also addTorrent() and addMetalink()
+
+runnableExamples("-r:off -b:js -d:nimExperimentalJsfetch -d:nimExperimentalAsyncjsThen"):
+  import std/jsfetch  ## fetch()
+  let client: Aria = newAria(ip = "127.0.0.1", port = 6800.uint16)
+  echo client.getVersion().repr
