@@ -29,3 +29,8 @@ import std/[jsffi, jsfetch]  ## fetch()
 let client: Aria = newAria(ip = "127.0.0.1", port = 6800.uint16)
 echo client.getVersion().repr
 ```
+
+
+### Notes
+
+- https://github.com/aria2/aria2/issues/1759#issue-856909078
